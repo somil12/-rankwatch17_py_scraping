@@ -1,6 +1,6 @@
-import urllib2
+import urllib2 #to access url import urllib2
 from bs4 import BeautifulSoup
-import csv
+import csv #to read csv files 
 
 def check_redirection(url):
     req = urllib2.Request(url=url)
@@ -8,13 +8,13 @@ def check_redirection(url):
     redirected = resp.geturl() != url # redirected will be a boolean True/False
     return redirected
 
-regions = ["american","arabic","australian","christian","english","french","german","indian"]
+regions = ["american","arabic","australian","christian","english","french","german","indian"] #to access regions in the given url
 
-genders = ["boy","girl"]
+genders = ["boy","girl"] #for choosing the gender
 
-letters = list("abcdefghijklmnopqrstuvwxyz")
+letters = list("abcdefghijklmnopqrstuvwxyz") #to identify the given first letter
 
-url = "https://www.babynamesdirect.com/baby-names"
+url = "https://www.babynamesdirect.com/baby-names" #given url
 
 with open("names.csv", "wb") as csvfile:
     spamwriter = csv.writer(csvfile1, delimiter=',')
